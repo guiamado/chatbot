@@ -88,6 +88,15 @@
         </v-row>
       </v-col>
     </v-row>
+    <!-- <iframe
+      style="border: none;"
+      class="textKommunicate"
+      height="600px"
+      width="400px"
+      src="https://widget.kommunicate.io/chat?appId=26488b84ef40f69390bb8a2333136d83f"
+      allow="microphone; geolocation;"
+    >
+    </iframe> -->
   </v-container>
 </template>
 
@@ -147,5 +156,22 @@
         },
       ],
     }),
+    methods: {
+    },
+    mounted (){
+      (function(d, m){
+        var kommunicateSettings = {"appId":"26488b84ef40f69390bb8a2333136d83f","popupWidget":true,"automaticChatOpenOnNavigation":true};
+        var s = document.createElement("script"); s.type = "text/javascript"; s.async = true;
+        s.src = "https://widget.kommunicate.io/v2/kommunicate.app";
+        var h = document.getElementsByTagName("head")[0]; h.appendChild(s);
+        window.kommunicate = m; m._globals = kommunicateSettings;
+        s.addClassName('textKommunicate')
+      })(document, window.kommunicate || {});
+    },
   }
 </script>
+<style scoped>
+.textKommunicate >>> mck-running-on {
+  display: none;
+}
+</style>
