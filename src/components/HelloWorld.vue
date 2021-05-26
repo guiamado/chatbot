@@ -165,7 +165,7 @@
         s.src = "https://widget.kommunicate.io/v2/kommunicate.app";
         var h = document.getElementsByTagName("head")[0]; h.appendChild(s);
         window.kommunicate = m; m._globals = kommunicateSettings;
-        s.addClassName('textKommunicate')
+        s.addClassName('textKommunicate');
       })(document, window.kommunicate || {});
     },
   }
