@@ -169,6 +169,7 @@
             'start.new': 'Começar uma conversa nova',
             'conversations.title': 'Conversas'
           },
+          "language": "pt-BR"
         };
         var s = document.createElement("script"); s.type = "text/javascript"; s.async = true;
         s.src = "https://widget.kommunicate.io/v2/kommunicate.app";
