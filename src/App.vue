@@ -1,6 +1,6 @@
 <template>
-  <v-app>
-    <v-app-bar
+  <v-app class="background-app">
+    <!-- <v-app-bar
       app
       color="primary"
       dark
@@ -35,22 +35,27 @@
         <span class="mr-2">Latest Release</span>
         <v-icon>mdi-open-in-new</v-icon>
       </v-btn>
-    </v-app-bar>
-
+    </v-app-bar> -->
+    <Header />
     <v-main>
       <HelloWorld/>
     </v-main>
+    <Footer />
   </v-app>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld';
+import Header from './components/Header';
+import Footer from './components/Footer';
 
 export default {
   name: 'App',
 
   components: {
     HelloWorld,
+    Header,
+    Footer,
   },
 
   data: () => ({
@@ -58,3 +63,8 @@ export default {
   }),
 };
 </script>
+<style scoped>
+.background-app {
+  background: linear-gradient(168deg, #f7f7f7 50%, #ffffff 40%) !important;
+}
+</style>

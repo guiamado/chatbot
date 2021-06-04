@@ -97,6 +97,14 @@
       allow="microphone; geolocation;"
     >
     </iframe> -->
+    <v-btn
+      tile
+      text
+      color="#1976d2"
+      @click="abrirChat()"
+    >
+      Open chat
+    </v-btn>
   </v-container>
 </template>
 
@@ -157,6 +165,10 @@
       ],
     }),
     methods: {
+      abrirChat() {
+        // eslint-disable-next-line no-undef
+        openChat();
+      }
     },
     mounted (){
       (function(d, m){
@@ -175,9 +187,16 @@
         s.src = "https://widget.kommunicate.io/v2/kommunicate.app";
         var h = document.getElementsByTagName("head")[0]; h.appendChild(s);
         window.kommunicate = m; m._globals = kommunicateSettings;
-        s.addClassName('textKommunicate');
       })(document, window.kommunicate || {});
     },
+  }
+  function openChat() {
+    // eslint-disable-next-line no-undef
+    Kommunicate.displayKommunicateWidget(true); //This will show the widget
+    // eslint-disable-next-line no-undef
+    // Kommunicate.launchConversation();
+    // eslint-disable-next-line no-undef
+    Kommunicate.startConversation();
   }
 </script>
 <style scoped>
