@@ -15,7 +15,8 @@
                                 tile
                                 text
                                 color="#1976d2"
-                                :class="{ 'underline-button': hover }"
+                                :class="{ 'underline-button': verifyRoute(hover)}"
+                                @click="changeRoute('/')"
                             >
                                 Início
                             </v-btn>
@@ -131,6 +132,19 @@ export default {
         }
     },
     methods: {
+        verifyRoute(hover) {
+            if(hover) {
+                return true;
+            }
+            if(this.$route.path === "/") {
+                return true;
+            }
+            return false;
+        },
+        changeRoute(rota) {
+            if (this.$route.path == rota) return;
+            this.$router.push({ path: rota });
+        },
     },
 
 }
