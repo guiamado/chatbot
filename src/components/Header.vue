@@ -37,7 +37,7 @@
                             </v-btn>
                         </v-hover>
                     </v-col>
-                    <v-col cols="2" xl="2" md="3" sm="3">
+                    <v-col cols="2" xl="3" lg="3" md="3" sm="3">
                         <v-hover
                             v-slot="{ hover }"
                         >
