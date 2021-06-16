@@ -1,8 +1,14 @@
 <template>
     <div :class="{'component-margin': !$vuetify.breakpoint.xsOnly, 'component-margin-mobile': $vuetify.breakpoint.xsOnly}">
-        <!-- <v-container fluid> -->
-        <v-container>
-            <v-row no-gutters align="center" :class="{'first-row': !$vuetify.breakpoint.xsOnly, 'first-row-mobile': $vuetify.breakpoint.xsOnly}">
+        <v-container
+            :fluid="$vuetify.breakpoint.lgAndUp"
+            :class="{'container-lg': $vuetify.breakpoint.lgAndUp}"
+        >
+            <v-row
+                no-gutters
+                align="center"
+                :class="{'first-row': !$vuetify.breakpoint.xsOnly, 'first-row-mobile': $vuetify.breakpoint.xsOnly}"
+            >
                 <v-col class="text-color" cols="12" xl="6" lg="6" md="6" sm="6">
                     <div :class="titleSize">
                         Super Poderes na Gestão Pública com Alex
@@ -24,12 +30,35 @@
                     </div>
                 </v-col>
                 <v-col v-if="!$vuetify.breakpoint.xsOnly" cols="6" class="image-center">
+                    <template v-if="$vuetify.breakpoint.lgAndUp">
+                        <div style="position: relative;">
+                            <v-img 
+                                id="bodyBackground"
+                                :src="bodyBackground"
+                                width="797"
+                                height="657"
+                                class="image-body-background-lg"
+                                contain
+                            ></v-img>
+                            <v-img
+                                :src="heroImageRight"
+                                contain
+                                :width="heroImageRightSize.width"
+                                :height="heroImageRightSize.height"
+                                id="heroImage"
+                                style="position: relative;"
+                            ></v-img>
+                        </div>
+                    </template>
                     <v-img
+                        v-else
                         :src="heroImageRight"
                         contain
                         :width="heroImageRightSize.width"
                         :height="heroImageRightSize.height"
+                        id="heroImage"
                     ></v-img>
+
                 </v-col>
             </v-row>
             <v-row no-gutters v-if="cards.length > 0">
@@ -65,6 +94,7 @@ export default {
             multiCanal: require('@/assets/images/home/multiCanal.svg'),
             cardDisponibilidade: require('@/assets/images/home/cardDisponibilidade.svg'),
             heroImageRight: require('@/assets/images/home/hero-image-right.svg'),
+            bodyBackground: require('@/assets/images/home/body-background-top-right.svg'),
             cards: [],
         };
     },
@@ -154,5 +184,17 @@ function openChat() {
     background: linear-gradient(269.75deg, #00FFF3 1.86%, #6C63FF 104.98%, #6C63FF 104.98%);
     height: 52px !important;
     width: 111px !important;
+}
+
+.image-body-background-lg {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin-right: -12px;
+    margin-top: -126px;
+}
+
+.container-lg {
+    padding-left: 68px;
 }
 </style>
