@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div :class="{'component-margin': !$vuetify.breakpoint.xsOnly, 'component-margin-mobile': $vuetify.breakpoint.xsOnly}">
     <div class="image-adjust">
         <v-img :src="topLeftImage" :width="tamanhoImagem" :height="tamanhoImagem"></v-img>
     </div>
@@ -15,7 +15,7 @@
                                 tile
                                 text
                                 color="#1976d2"
-                                :class="{ 'underline-button': verifyRoute(hover)}"
+                                :class="{ 'underline-button': verifyRoute(hover, '/')}"
                                 @click="changeRoute('/')"
                             >
                                 Início
@@ -30,7 +30,8 @@
                                 tile
                                 text
                                 color="#1976d2"
-                                :class="{ 'underline-button': hover }"
+                                :class="{ 'underline-button': verifyRoute(hover, '/about')}"
+                                @click="changeRoute('/about')"
                             >
                                 Sobre
                             </v-btn>
@@ -132,11 +133,11 @@ export default {
         }
     },
     methods: {
-        verifyRoute(hover) {
+        verifyRoute(hover, route) {
             if(hover) {
                 return true;
             }
-            if(this.$route.path === "/") {
+            if(this.$route.path === route) {
                 return true;
             }
             return false;
@@ -176,5 +177,13 @@ export default {
     position: absolute;
     font-size: 20px;
     color: #12174E;
+}
+
+.component-margin {
+    margin-bottom: 100px;
+}
+
+.component-margin-mobile {
+    margin-bottom: 14px;
 }
 </style>

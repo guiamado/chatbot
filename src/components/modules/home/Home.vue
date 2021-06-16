@@ -1,5 +1,5 @@
 <template>
-    <div :class="{'component-margin': !$vuetify.breakpoint.xsOnly, 'component-margin-mobile': $vuetify.breakpoint.xsOnly}">
+    <div>
         <v-container
             :fluid="$vuetify.breakpoint.lgAndUp"
             :class="{'container-lg': $vuetify.breakpoint.lgAndUp}"
@@ -156,14 +156,6 @@ function openChat() {
 </script>
 
 <style>
-.component-margin {
-    margin-top: 100px;
-}
-
-.component-margin-mobile {
-    margin-top: 14px;
-}
-
 .image-center {
     text-align: -webkit-center;
 }
