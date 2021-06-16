@@ -6,7 +6,7 @@
         app
         absolute
     >
-        <div class="coffe-table-style" :style="{ marginBottom: marginCoffe }">
+        <div class="coffe-table-style" :style="{ marginBottom: marginCoffe, marginTop: marginCoffeMobile }">
             <v-img :src="coffeTable" :width="coffeTableSize.width" :height="coffeTableSize.height" contain></v-img>
         </div>
         <v-row align="center">
@@ -89,10 +89,17 @@ export default {
                 return '143px';
             }
             if (this.$vuetify.breakpoint.xsOnly) {
-                return '72px';
+                return '';
             }
             
             return '262px';
+        },
+        marginCoffeMobile() {
+            if (this.$vuetify.breakpoint.xsOnly) {
+                return '-35px';
+            }
+            
+            return '';
         },
         logoOficinaMunicipalSize() {
             let size = {
