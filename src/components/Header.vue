@@ -98,7 +98,7 @@
           </v-list-item-icon> -->
 
           <v-list-item-content>
-            <v-list-item-title style="color: #12174E;">{{ item.title }}</v-list-item-title>
+            <v-list-item-title style="color: #12174E;" @click="changeRoute(item.route)">{{ item.title }}</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
       </v-list>
@@ -114,8 +114,8 @@ export default {
             topLeftImage: require('@/assets/images/topLeft.svg'),
             drawer: null,
             items: [
-                { title: 'Início', icon: 'mdi-view-dashboard' },
-                { title: 'Sobre', icon: 'mdi-forum' },
+                { title: 'Início', icon: 'mdi-view-dashboard', route: '/' },
+                { title: 'Sobre', icon: 'mdi-forum', route: '/about' },
                 { title: 'Documentos', icon: 'mdi-forum' },
                 { title: 'Contatos', icon: 'mdi-forum' },
             ],
