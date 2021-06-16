@@ -1,5 +1,6 @@
 <template>
     <div :class="{'component-margin': !$vuetify.breakpoint.xsOnly, 'component-margin-mobile': $vuetify.breakpoint.xsOnly}">
+        <!-- <v-container fluid> -->
         <v-container>
             <v-row no-gutters align="center" :class="{'first-row': !$vuetify.breakpoint.xsOnly, 'first-row-mobile': $vuetify.breakpoint.xsOnly}">
                 <v-col class="text-color" cols="12" xl="6" lg="6" md="6" sm="6">

@@ -1,26 +1,11 @@
 <template>
-    <!-- <footer>
-        <div class="footer-app">
-            oi
-        </div>
-    </footer> -->
     <v-footer
         color="primary lighten-1"
-        padless
         class="footer-app"
         :height="footerSize"
+        app
+        absolute
     >
-        <!-- <v-row
-        justify="center"
-        no-gutters
-        >
-            <v-col
-                class="primary lighten-2 py-4 text-center white--text"
-                cols="12"
-            >
-                
-            </v-col>
-        </v-row> -->
         <div class="coffe-table-style" :style="{ marginBottom: marginCoffe }">
             <v-img :src="coffeTable" :width="coffeTableSize.width" :height="coffeTableSize.height" contain></v-img>
         </div>
@@ -42,14 +27,6 @@
                 ></v-img>
             </v-col>
         </v-row>
-        <!-- <v-row>
-            <v-col>
-                <div>
-                    <v-img :src="coffeTable" :width="coffeTableSize.width" :height="coffeTableSize.height"></v-img>
-                </div>
-            </v-col>
-            <v-col></v-col>
-        </v-row> -->
     </v-footer>
 </template>
 
@@ -59,7 +36,7 @@ export default {
     data() {
         return {
             logoKonrad: require('@/assets/images/footer/logo-konrad.svg'),
-            coffeTable: require('@/assets/images/footer/image-footer-coffe-table.svg'),
+            coffeTable: require('@/assets/images/footer/image-footer-left.svg'),
             logoOficinaMunicipal: require('@/assets/images/footer/logo-oficina-municipal.svg'),
         };
     },
@@ -92,16 +69,16 @@ export default {
         },
         coffeTableSize() {
             let size = {
-                height: 487,
+                height: 224,
                 width: 491,
             }
             if(this.$vuetify.breakpoint.smOnly) {
-                size.height = 259.96;
+                size.height = 130.96;
                 size.width = 262.1;
                 return size;
             }
             if (this.$vuetify.breakpoint.xsOnly) {
-                size.height = 126.39;
+                size.height = 62.39;
                 size.width = 127.42;
                 return size;
             }
@@ -109,13 +86,13 @@ export default {
         },
         marginCoffe() {
             if(this.$vuetify.breakpoint.smOnly) {
-                return '73px';
+                return '143px';
             }
             if (this.$vuetify.breakpoint.xsOnly) {
-                return '38px';
+                return '72px';
             }
             
-            return '140px';
+            return '262px';
         },
         logoOficinaMunicipalSize() {
             let size = {
