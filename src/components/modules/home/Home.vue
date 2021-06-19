@@ -103,15 +103,20 @@
                 </v-col>
                 </template>
             </v-row>
+            <Carousel :slides="carouselTexts"/>
         </v-container>
     </div>
 </template>
 
 <script>
 import cardTexts from './helper/cardTexts';
+import Carousel from '../commom/Carousel.vue';
 
 export default {
     name: 'Home',
+    components: {
+        Carousel,
+    },
     data() {
         return {
             solucionaDuvida: require('@/assets/images/home/cardSolucionaDuvida.svg'),
@@ -121,6 +126,20 @@ export default {
             bodyBackground: require('@/assets/images/home/body-background-top-right.svg'),
             cards: [],
             cardTexts,
+            carouselTexts: [
+                {
+                    title: `Você sabia que muitos problemas da <span class="purple-text">gestão pública</span> podem ser solucionados com <span class="purple-text">Inteligência Artificial</span>?`,
+                    description: `E que isso não é tão caro e complicado quanto parece.`
+                },
+                {
+                    title: `Você sabia que muitos problemas da <span class="purple-text">gestão pública</span> podem ser solucionados com <span class="purple-text">Inteligência Artificial</span>?`,
+                    description: `E que isso não é tão caro e complicado quanto parece.`
+                },
+                {
+                    title: `Você sabia que muitos problemas da <span class="purple-text">gestão pública</span> podem ser solucionados com <span class="purple-text">Inteligência Artificial</span>?`,
+                    description: `E que isso não é tão caro e complicado quanto parece.`
+                },
+            ]
         };
     },
     computed: {
