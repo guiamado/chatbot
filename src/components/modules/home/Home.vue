@@ -21,28 +21,30 @@
                     </div>
                     <div :class="{'text-center': $vuetify.breakpoint.xsOnly}">
                         <v-row align="center" class="mt-2">
-                            <v-btn
-                                rounded
-                                color="#6C63FF"
-                                dark
-                                class="mt-2 ml-3 mr-4"
-                                @click="abrirChat"
-                                height="40"
-                            >
-                                É só perguntar
-                            </v-btn>
-                            <v-btn
-                                rounded
-                                color="#12174E"
-                                dark
-                                class="mt-2 pl-4"
-                                @click="abrirChat"
-                                height="40"
-                                outlined
-                                to="/about"
-                            >
-                                Sobre
-                            </v-btn>
+                            <v-col>
+                                <v-btn
+                                    rounded
+                                    color="#6C63FF"
+                                    dark
+                                    class="mt-2 mr-4"
+                                    @click="abrirChat"
+                                    height="40"
+                                >
+                                    É só perguntar
+                                </v-btn>
+                                <v-btn
+                                    rounded
+                                    color="#12174E"
+                                    dark
+                                    class="mt-2 pl-4"
+                                    @click="abrirChat"
+                                    height="40"
+                                    outlined
+                                    to="/about"
+                                >
+                                    Sobre
+                                </v-btn>
+                            </v-col>
                         </v-row>
                     </div>
                 </v-col>
