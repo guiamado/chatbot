@@ -25,7 +25,7 @@
                                 rounded
                                 color="#6C63FF"
                                 dark
-                                class="mt-2 mr-4"
+                                class="mt-2 ml-3 mr-4"
                                 @click="abrirChat"
                                 height="40"
                             >
@@ -35,7 +35,7 @@
                                 rounded
                                 color="#12174E"
                                 dark
-                                class="mt-2"
+                                class="mt-2 pl-4"
                                 @click="abrirChat"
                                 height="40"
                                 outlined
