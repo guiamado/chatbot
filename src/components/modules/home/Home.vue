@@ -1,9 +1,6 @@
 <template>
     <div>
-        <v-container
-            :fluid="$vuetify.breakpoint.lgAndUp"
-            :class="{'container-lg': $vuetify.breakpoint.lgAndUp}"
-        >
+        <v-container>
             <v-row
                 no-gutters
                 align="center"
@@ -11,47 +8,46 @@
             >
                 <v-col class="text-color" cols="12" xl="6" lg="6" md="6" sm="6">
                     <div :class="titleSize">
-                        Super Poderes na Gestão Pública com Alex
+                        Implemente <span class="purple-text">IA</span> na gestão do seu
+                        município com o <span class="purple-text">Ethical</span>!
                     </div>
                     <div :class="{'text-center': $vuetify.breakpoint.xsOnly}">
-                        Seja para agilizar o seu processo de conhecimento das leis ou para
-                        revisar aquele documento, deixa que Alex resolve para você!!
+                        Aumente a <span class="font-weight-bold">produtividade</span>, obtendo orientações de maneira
+                        <span class="font-weight-bold">rápida</span> sobre as melhores
+                        <span class="font-weight-bold">práticas</span> de <span class="font-weight-bold">automação</span>
+                        e <span class="font-weight-bold">inteligência artificial</span>
+                        no <span class="font-weight-bold">setor público</span>
+                        com o assistente virtual <span class="font-weight-bold">Ethical</span>.
                     </div>
                     <div :class="{'text-center': $vuetify.breakpoint.xsOnly}">
-                        <v-btn
-                            rounded
-                            color="primary"
-                            dark
-                            class="mt-2 say-hello-button"
-                            @click="abrirChat"
-                        >
-                            Dizer Olá
-                        </v-btn>
+                        <v-row align="center" class="mt-2">
+                            <v-btn
+                                rounded
+                                color="#6C63FF"
+                                dark
+                                class="mt-2 mr-4"
+                                @click="abrirChat"
+                                height="40"
+                            >
+                                É só perguntar
+                            </v-btn>
+                            <v-btn
+                                rounded
+                                color="#12174E"
+                                dark
+                                class="mt-2"
+                                @click="abrirChat"
+                                height="40"
+                                outlined
+                                to="/about"
+                            >
+                                Sobre
+                            </v-btn>
+                        </v-row>
                     </div>
                 </v-col>
                 <v-col v-if="!$vuetify.breakpoint.xsOnly" cols="6" class="image-center">
-                    <template v-if="$vuetify.breakpoint.lgAndUp">
-                        <div style="position: relative;">
-                            <v-img 
-                                id="bodyBackground"
-                                :src="bodyBackground"
-                                width="797"
-                                height="657"
-                                class="image-body-background-lg"
-                                contain
-                            ></v-img>
-                            <v-img
-                                :src="heroImageRight"
-                                contain
-                                :width="heroImageRightSize.width"
-                                :height="heroImageRightSize.height"
-                                id="heroImage"
-                                style="position: relative;"
-                            ></v-img>
-                        </div>
-                    </template>
                     <v-img
-                        v-else
                         :src="heroImageRight"
                         contain
                         :width="heroImageRightSize.width"
@@ -70,6 +66,20 @@
                         max-height="auto"
                         :width="cardsWidth"
                     ></v-img>
+                    <div
+                        class="black-blue-text"
+                        :class="{'text-h5 font-weight-bold px-5 margin-desktop': $vuetify.breakpoint.lgAndUp}"
+                        :style="`max-width: ${cardsWidth}px;`"
+                    >
+                        <span v-html="cardTexts[i].title"></span>
+                    </div>
+                    <div
+                        class="desc-text-color text-center"
+                        :class="{'px-5': $vuetify.breakpoint.lgAndUp}"
+                        :style="`max-width: ${cardsWidth}px;`"
+                    >
+                        {{cardTexts[i].description}}
+                    </div>
                 </v-col>
                 <v-col :key="i" v-if="$vuetify.breakpoint.xsOnly" cols="12" class="image-center mb-4">
                     <v-img
@@ -78,6 +88,18 @@
                         max-height="auto"
                         :width="cardsWidth"
                     ></v-img>
+                    <div
+                        class="black-blue-text"
+                        :style="`max-width: ${cardsWidth}px;`"
+                    >
+                        <span v-html="cardTexts[i].title"></span>
+                    </div>
+                    <div
+                        class="desc-text-color text-center"
+                        :style="`max-width: ${cardsWidth}px;`"
+                    >
+                        {{cardTexts[i].description}}
+                    </div>
                 </v-col>
                 </template>
             </v-row>
@@ -86,16 +108,19 @@
 </template>
 
 <script>
+import cardTexts from './helper/cardTexts';
+
 export default {
     name: 'Home',
     data() {
         return {
-            solucionaDuvida: require('@/assets/images/home/solucionaDuvida.svg'),
-            multiCanal: require('@/assets/images/home/multiCanal.svg'),
+            solucionaDuvida: require('@/assets/images/home/cardSolucionaDuvida.svg'),
+            multiCanal: require('@/assets/images/home/cardMultcanal.svg'),
             cardDisponibilidade: require('@/assets/images/home/cardDisponibilidade.svg'),
             heroImageRight: require('@/assets/images/home/hero-image-right.svg'),
             bodyBackground: require('@/assets/images/home/body-background-top-right.svg'),
             cards: [],
+            cardTexts,
         };
     },
     computed: {
@@ -172,11 +197,6 @@ function openChat() {
     margin-bottom: 30px !important;
 }
 
-.say-hello-button {
-    background: linear-gradient(269.75deg, #00FFF3 1.86%, #6C63FF 104.98%, #6C63FF 104.98%);
-    height: 52px !important;
-    width: 111px !important;
-}
 
 .image-body-background-lg {
     position: absolute;
@@ -188,5 +208,24 @@ function openChat() {
 
 .container-lg {
     padding-left: 68px;
+}
+
+.purple-text {
+    color: #6C63FF;
+}
+
+.black-blue-text {
+    color: #12174E;
+    text-align: center;
+    font-weight: bold;
+    margin-top: -35px;
+}
+
+.desc-text-color {
+    color: #12174e99;
+}
+
+.margin-desktop {
+    margin-top: -55px;
 }
 </style>
