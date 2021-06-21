@@ -26,7 +26,7 @@ export default {
   mounted (){
     (function(d, m){
       var kommunicateSettings = {
-        "appId":"26488b84ef40f69390bb8a2333136d83f",
+        "appId": process.env.VUE_APP_KOMMUNICATE_ID,
         "popupWidget":true,
         "automaticChatOpenOnNavigation":true,
         "labels": {
