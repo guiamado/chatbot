@@ -9,7 +9,7 @@
                 <v-col class="text-color" cols="12" xl="6" lg="6" md="6" sm="6">
                     <div :class="titleSize">
                         Implemente <span class="purple-text">IA</span> na gestão do seu
-                        município com o <span class="purple-text">Ethical</span>!
+                        município com o <span class="purple-text">Assis</span>!
                     </div>
                     <div :class="{'text-center': $vuetify.breakpoint.xsOnly}">
                         Aumente a <span class="font-weight-bold">produtividade</span>, obtendo orientações de maneira
@@ -17,7 +17,7 @@
                         <span class="font-weight-bold">práticas</span> de <span class="font-weight-bold">automação</span>
                         e <span class="font-weight-bold">inteligência artificial</span>
                         no <span class="font-weight-bold">setor público</span>
-                        com o assistente virtual <span class="font-weight-bold">Ethical</span>.
+                        com o assistente virtual <span class="font-weight-bold">Assis</span>.
                     </div>
                     <div :class="{'text-center': $vuetify.breakpoint.xsOnly}">
                         <v-row align="center" class="mt-2">
