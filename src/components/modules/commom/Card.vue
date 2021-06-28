@@ -6,15 +6,15 @@
             :width="sizeDefaultImg.width"
         ></v-img>
         <v-card-title :class="titleSize">
-            Card Title
+            {{ title }}
         </v-card-title>
 
-        <v-card-subtitle style="text-align: justify;">
-            Card subtitle
+        <v-card-subtitle style="text-align: justify;" v-if="subTitle">
+            {{ subTitle }}
         </v-card-subtitle>
 
         <v-card-text style="text-align: justify;">
-            Card normal text.
+            <slot name="cardText"></slot>
         </v-card-text>
     </v-card>
 </template>
@@ -22,6 +22,18 @@
 <script>
 export default {
     name: 'Card',
+    props: {
+        title: {
+            type: String,
+            required: true,
+            default: ''
+        },
+        subTitle: {
+            type: String,
+            required: false,
+            default: ''
+        },
+    },
     data() {
         return {
             cardImg: require('@/assets/images/commom/v-img.svg'),
