@@ -21,9 +21,9 @@
                         <p>
                             Coisas que o Assis sabe falar:
                             <ul>
-                                <li>O que é inteligência artificial ? Como funciona ?</li>
-                                <li>Quais são exemplos de projetos de IA na administração pública ?</li>
-                                <li>Quais são as leis relacionadas a esse assunto ?</li>
+                                <li>O que é inteligência artificial? Como funciona?</li>
+                                <li>Quais são exemplos de projetos de IA na administração pública?</li>
+                                <li>Quais são as leis relacionadas a esse assunto?</li>
                             </ul>
                         </p>
                         <p>
